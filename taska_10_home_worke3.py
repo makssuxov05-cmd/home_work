@@ -2,19 +2,17 @@ first, second = map(int, input('Введите 2 числа через проб�
 
 
 def make_operator(func):
-
-    def warpper(first, second):
-        if first == second:
+    def wrapper(first, second):
+        if first < 0 or second < 0:
+            operation = '**'
+        elif first == second:
             operation = '+'
         elif first > second:
             operation = '-'
-        elif second > first:
+        else:
             operation = '/'
-        elif first < 0 or second <0:
-            operation = '*'
         return func(first, second, operation)
-    return warpper
-
+    return wrapper
 
 
 @make_operator
