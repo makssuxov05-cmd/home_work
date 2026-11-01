@@ -1,0 +1,13 @@
+SELECT
+    marks.value,
+    books.title,
+    `groups`.title,
+    `groups`.start_date,
+    `groups`.end_date
+FROM students
+JOIN `groups` ON `groups`.id = students.group_id
+JOIN books ON books.taken_by_student_id = students.id
+JOIN marks ON marks.student_id = students.id
+JOIN lessons ON lessons.id = marks.lesson_id
+JOIN subjects ON subjects.id = lessons.subject_id
+WHERE students.name = 'Tony'
