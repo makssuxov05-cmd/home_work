@@ -1,7 +1,7 @@
 import requests
 
 
-url = "http://objapi.course.qa-practice.com/object"
+url = "https://objapi.course.qa-practice.com/object/1"
 
 
 def get_object(id_obj):
